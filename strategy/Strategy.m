@@ -4,6 +4,7 @@ classdef (Abstract) Strategy
     
     properties (Abstract)
         name
+        fakeDelay
     end
     
     methods (Abstract)

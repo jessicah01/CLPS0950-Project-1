@@ -11,6 +11,7 @@ classdef StrategyType
     end
     enumeration
         RANDOM (RandomStrategy)
+        GREEDY_MCTS (GreedyMctsStrategy)
     end
 end
 
