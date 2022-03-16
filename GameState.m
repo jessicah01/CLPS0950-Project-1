@@ -8,7 +8,7 @@ classdef GameState
       function obj = GameState(text)
          obj.text = text;
       end
-   end
+    end
     enumeration
         PLAYER_1_WIN ("Player 1 wins!")
         PLAYER_2_WIN ("Player 2 wins!")

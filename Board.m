@@ -3,6 +3,7 @@ classdef Board
     %   Stores gamestate
     
     properties
+        ai
         boardState
         gameState
         history
@@ -13,7 +14,7 @@ classdef Board
     
     methods
         
-        function obj = Board(playerThatStarts)
+        function obj = Board(playerThatStarts, againstComputer)
             %Board Construct an instance of Board
             %   Creates an empty board - intakes int 1 or int 2 or nothing
             
@@ -22,6 +23,11 @@ classdef Board
             disp(playerThatStarts)
             if ~exist('playerThatStarts', 'var') || isempty(playerThatStarts)
                 playerThatStarts = randi([1 2]);
+            end
+            if againstComputer
+                obj.ai = StrategyType(input('What strategy should the computer use? random\n>> ', 's'));
+            else
+                obj.ai = [];
             end
             obj.player = playerThatStarts;
             obj.boardState = zeros(6, 7);
@@ -71,7 +77,7 @@ classdef Board
                     obj.player = 1;
                 end
                 obj.gameState = checkBoardState(obj.boardState);
-            end
+            end 
         end
         
     end
