@@ -18,13 +18,6 @@ p2winH = [2,2,2,2];
 p1winV = [1;1;1;1];
 p2winV = [2;2;2;2];
 
-%checks if board is full yet validation function ran implying no winner
-%thus draw
-if all(boardState(:) ~= 0)
-  state = GameState.DRAW;
-  return;
-end
-
 %checks for horizontal win scenario, returns if win condition reached
 % Isaac - rewriting this to increase the speed of execution. MCTS takes
 % forever to execute due to board state validation taking too long
@@ -109,6 +102,13 @@ for i = 1:3
           return;
       end
   end
+end
+
+%checks if board is full yet validation function ran implying no winner
+%thus draw
+if all(boardState(:) ~= 0)
+  state = GameState.DRAW;
+  return;
 end
 
 %If state has not been set by above conditions, set state as CONTINUE

@@ -8,6 +8,7 @@ classdef GreedyMctsStrategy < Strategy
         name
         fakeDelay
         lookForward
+        message
     end
     
     methods
@@ -16,9 +17,10 @@ classdef GreedyMctsStrategy < Strategy
             obj.name = "Greedy Monte Carlo Tree Search";
             obj.fakeDelay = 0;
             obj.lookForward = input('How far forward should MCTS search? Larger numbers = more difficult and longer computation time. Easy: 100, Medium: 250\n>> ');
+            obj.message = [];
         end
 
-        function column = move(obj, boardState)
+        function [column, obj] = move(obj, boardState)
             % This function is called by the game engine to get the next
             % move.
             %
@@ -39,6 +41,8 @@ classdef GreedyMctsStrategy < Strategy
             % For each possible (and legal) initial move, we simulate
             % X random games and count the number that won.
             
+            obj.message = [];
+            
             % We know that the AI is always Player 2
 
             wins_per_starting_move = zeros(1,7);
@@ -53,7 +57,11 @@ classdef GreedyMctsStrategy < Strategy
                 wins_per_starting_move(ii) = winning_states;
             end
             [~, column] = max(wins_per_starting_move);
+            obj.message = wins_per_starting_move;
+            disp("Monte Carlo chance of winning per cell:")
+            disp(char(cellstr(num2str(round(obj.message(1,:)/obj.lookForward * 100, 2), '%4.2f%% '))));
+            disp("Placing tile into slot " + num2str(column))
+            fprintf('\n')
         end
-        
     end
 end

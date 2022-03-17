@@ -13,7 +13,7 @@ function game()
         % Save board class as gameBoard
         GameBoard = Board(input('Which player should start first, 1 or 2? If playing against the computer, it is player 2. Default: Random\n>> '), againstComputer);
         while GameBoard.gameState == GameState.CONTINUE
-            clc
+            %clc
             disp(strcat("Turn ", num2str(GameBoard.turn),": It is currently Player ", num2str(GameBoard.player), "'s turn"))
             if ~isempty(GameBoard.message)
                 disp(GameBoard.message);
@@ -30,7 +30,7 @@ function game()
                 GameBoard = GameBoard.updateGame(input('What column do you want to drop a piece into? 1-7\n>> '));
             end  
         end
-        clc
+        %clc
         disp(strcat("Turn ", num2str(GameBoard.turn), ": ", GameBoard.gameState.text))
         fprintf('\n');
         disp(chars(GameBoard.boardState + 1));
