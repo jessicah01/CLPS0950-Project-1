@@ -1,4 +1,7 @@
 function game()
+    % Function to run text-base graphical interface for testing
+    % Add strategies to path
+    addpath(genpath("strategy"));
     % Yes - the "all" is required or it gives us issues
     clear all;
     quit = false;

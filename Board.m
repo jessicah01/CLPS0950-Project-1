@@ -25,7 +25,7 @@ classdef Board
                 playerThatStarts = randi([1 2]);
             end
             if againstComputer
-                obj.ai = StrategyType(input('What strategy should the computer use? random/greedy_mcts\n>> ', 's'));
+                obj.ai = StrategyType(input('What strategy should the computer use? random/mcts\n>> ', 's'));
             else
                 obj.ai = [];
             end

@@ -1,4 +1,9 @@
 classdef GreedyMctsStrategy < Strategy
+    % Monte Carlo Tree Search, implemented badly
+    % Searches for the best possible moves by simulating X games for each
+    % initial valid starting position and chooses the starting position
+    % that had the most wins. Not a true MCTS implementation due to a lack
+    % of defined tree structure.
     properties
         name
         fakeDelay

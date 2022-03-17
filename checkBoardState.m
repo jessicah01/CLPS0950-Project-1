@@ -1,22 +1,16 @@
-function state = checkBoardState(boardState)
-  % Returns the game state when passed in a board state (matrix)
-  state = validation(boardState);
-  % TODO: @Jenny Write logic to detect a draw, if a player wins, or if
-  % the game should continue
-  % Should set "state" to GameState.PLAYER_1_WIN, GameState.PLAYER_2_WIN,
-  % GameState.DRAW, or GameState.CONTINUE
-end
-
 %Validation function takes in boardState matrix and return state
 %(one of the GameState Enums)
-function state = validation(boardState)
+function state = checkBoardState(boardState)
+% Returns the game state when passed in a board state (matrix)
 
-%define state initially as empty string
+% define state initially as empty string
 state = "";
 
-[rows, cols] = size(boardState);
+% [rows, cols] = size(boardState);
+rows = 6;
+cols = 7;
 
-%player 1 and 2 horizontal win matrix, also used to check for diags
+%player 1 and 2 horizontal win matrix
 p1winH = [1,1,1,1];
 p2winH = [2,2,2,2];
 
@@ -51,18 +45,14 @@ for row = 1:rows
                 state = GameState.PLAYER_1_WIN;
             elseif prev == 2
                 state = GameState.PLAYER_2_WIN;
-            else
-                disp('Error - Invalid State')
             end
             return;
         end
     end
-    if state ~= ""
-        return;
-    end
 end
 
 %checks for vertical win scenario, breaks loop if win condition reached
+%{
 for i = 1:3
   for j = 1:7
       %sets checkBoardState as 1*4 column vector
@@ -75,6 +65,31 @@ for i = 1:3
           return;
       end
   end
+end
+%}
+
+for col = 1:cols
+    count = 1;
+    prev = 0;
+    for row = 1:rows
+        if boardState(row, col) == prev && boardState(row, col) ~= 0
+            count = count + 1;
+        else
+            count = 1;
+            prev = boardState(row, col);
+        end
+        if count >= 4
+            if prev == 1
+                state = GameState.PLAYER_1_WIN;
+            elseif prev == 2
+                state = GameState.PLAYER_2_WIN;
+            end
+            return;
+        end
+    end
+    if state ~= ""
+        return;
+    end
 end
 
 %checks for diagonal win scenario, breaks loop if win condition reached,
