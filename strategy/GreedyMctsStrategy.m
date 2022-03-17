@@ -2,6 +2,7 @@ classdef GreedyMctsStrategy < Strategy
     properties
         name
         fakeDelay
+        lookForward
     end
     
     methods
@@ -9,9 +10,10 @@ classdef GreedyMctsStrategy < Strategy
         function obj = GreedyMctsStrategy()
             obj.name = "Greedy Monte Carlo Tree Search";
             obj.fakeDelay = 0;
+            obj.lookForward = input('How far forward should MCTS search? Larger numbers = more difficult and longer computation time. Easy: 100, Medium: 250\n>> ');
         end
 
-        function column = move(~, boardState)
+        function column = move(obj, boardState)
             % This function is called by the game engine to get the next
             % move.
             %
@@ -39,7 +41,7 @@ classdef GreedyMctsStrategy < Strategy
             for ii = 1:7
                 winning_states = 0;
                 if boardState(1, ii) == 0 % check if top piece is empty, or tell algorithm it lost
-                    for jj = 1:100
+                    for jj = 1:obj.lookForward
                         winning_states = winning_states + simulateRandomGame(ii, boardState);
                     end
                 end

@@ -4,7 +4,6 @@ function win_loss = simulateRandomGame(column, boardState)
 
   simulated_player = 2; % We know that AI is always player 2
   simulated_boardState = boardState;
-  simulated_gameState = GameState.CONTINUE;
 
   if column > 7
       column = 7;

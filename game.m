@@ -1,4 +1,6 @@
 function game()
+    % Yes - the "all" is required or it gives us issues
+    clear all;
     quit = false;
     while ~quit
         clc
@@ -15,7 +17,8 @@ function game()
             else
                 fprintf('\n');
             end
-            disp(GameBoard.boardState);
+            chars = '_XO';
+            disp(chars(GameBoard.boardState + 1))
             if againstComputer && GameBoard.player == 2
                 disp("The computer is thinking...")
                 pause(GameBoard.ai.strategy.fakeDelay)
@@ -27,7 +30,7 @@ function game()
         clc
         disp(strcat("Turn ", num2str(GameBoard.turn), ": ", GameBoard.gameState.text))
         fprintf('\n');
-        disp(GameBoard.boardState);
+        disp(chars(GameBoard.boardState + 1));
         if input('Would you like to play again? y/n\n>> ', 's') == 'n'
             quit = true;
         end
