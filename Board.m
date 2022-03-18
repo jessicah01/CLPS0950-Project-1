@@ -14,7 +14,7 @@ classdef Board
     
     methods
         
-        function obj = Board(playerThatStarts, againstComputer)
+        function obj = Board(playerThatStarts, aiType)
             %Board Construct an instance of Board
             %   Creates an empty board - intakes int 1 or int 2 or nothing
             
@@ -24,11 +24,7 @@ classdef Board
             if ~exist('playerThatStarts', 'var') || isempty(playerThatStarts)
                 playerThatStarts = randi([1 2]);
             end
-            if againstComputer
-                obj.ai = StrategyType(input('What strategy should the computer use? random/mcts\n>> ', 's'));
-            else
-                obj.ai = [];
-            end
+            obj.ai = aiType;
             obj.player = playerThatStarts;
             obj.boardState = zeros(6, 7);
             obj.turn = 1;

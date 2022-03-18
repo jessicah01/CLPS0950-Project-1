@@ -10,8 +10,13 @@ function game()
         fprintf('Connect 4 - MATLAB Edition\nCreated by Isaac Kim, Jessica Hong, and Jenny Wang\n');
         againstComputer = input('Would you like to play against the computer? y/n\n>> ', 's') == 'y';
 
+        if againstComputer
+            aiType = StrategyType(input('What strategy should the computer use? random/mcts\n>> ', 's'));
+        else
+            aiType = [];
+        end
         % Save board class as gameBoard
-        GameBoard = Board(input('Which player should start first, 1 or 2? If playing against the computer, it is player 2. Default: Random\n>> '), againstComputer);
+        GameBoard = Board(input('Which player should start first, 1 or 2? If playing against the computer, it is player 2. Default: Random\n>> '), aiType);
         while GameBoard.gameState == GameState.CONTINUE
             %clc
             disp(strcat("Turn ", num2str(GameBoard.turn),": It is currently Player ", num2str(GameBoard.player), "'s turn"))
