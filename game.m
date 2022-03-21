@@ -2,12 +2,24 @@ function game()
     % Function to run text-base graphical interface for testing
     % Add strategies to path
     addpath(genpath("strategy"));
+    addpath(genpath("tutorial"));
     % Yes - the "all" is required or it gives us issues
     clear all;
     quit = false;
     while ~quit
         clc
         fprintf('Connect 4 - MATLAB Edition\nCreated by Isaac Kim, Jessica Hong, and Jenny Wang\n');
+        tutor = input('Would you like to go through the tutorial? y/n\n>> ', 's') == 'y';
+       
+        
+        if tutor
+            completed = false;
+            while ~completed
+            Tutorial = GameTutorial(input('What is your name? \n>> ', 's'));
+            completed = Tutorial.complete;
+            end
+        end
+
         againstComputer = input('Would you like to play against the computer? y/n\n>> ', 's') == 'y';
 
         if againstComputer
@@ -15,6 +27,8 @@ function game()
         else
             aiType = [];
         end
+
+       
         % Save board class as gameBoard
         GameBoard = Board(input('Which player should start first, 1 or 2? If playing against the computer, it is player 2. Default: Random\n>> '), aiType);
         while GameBoard.gameState == GameState.CONTINUE
