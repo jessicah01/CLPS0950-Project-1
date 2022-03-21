@@ -15,7 +15,7 @@ classdef StrategyType
         MCTS_EASY (GreedyMctsStrategy(25))
         MCTS_MEDIUM (GreedyMctsStrategy(100))
         MCTS_HARD (GreedyMctsStrategy(250))
-        AlphaBeta (CheatAlphaBetaStrategy)
+        ALPHABETA (CheatAlphaBetaStrategy)
     end
 end
 
