@@ -22,7 +22,4 @@ function app = updateUI(app, column)
         app.Image_37.ImageSource, app.Image_38.ImageSource, app.Image_39.ImageSource,... 
         app.Image_40.ImageSource, app.Image_41.ImageSource, app.Image_42.ImageSource] = subsref(horizBoard, substruct('{}',{':'}));
 
-    if boardState.gameState ~= GameState.CONTINUE
-        
-    end
 end
