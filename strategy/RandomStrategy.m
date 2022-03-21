@@ -6,12 +6,12 @@ classdef RandomStrategy < Strategy
     
     methods
         
-        function obj = RandomStrategy()
+        function obj = RandomStrategy(~)
             obj.name = "random";
             obj.fakeDelay = 2;
         end
         
-        function column = move(~, ~)
+        function column = move(~, ~, ~)
             column = randi([1 7]);
         end
         

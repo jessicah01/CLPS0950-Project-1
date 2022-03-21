@@ -44,7 +44,7 @@ function game()
             if againstComputer && GameBoard.player == 2
                 disp("The computer is thinking...")
                 pause(GameBoard.ai.strategy.fakeDelay)
-                GameBoard = GameBoard.updateGame(GameBoard.ai.strategy.move(GameBoard.boardState));
+                GameBoard = GameBoard.updateGame(GameBoard.ai.strategy.move(GameBoard.boardState, GameBoard));
             else
                 GameBoard = GameBoard.updateGame(input('What column do you want to drop a piece into? 1-7\n>> '));
             end  

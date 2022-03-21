@@ -13,14 +13,15 @@ classdef GreedyMctsStrategy < Strategy
     
     methods
         
-        function obj = GreedyMctsStrategy()
+        function obj = GreedyMctsStrategy(lookForward)
             obj.name = "Greedy Monte Carlo Tree Search";
             obj.fakeDelay = 0;
-            obj.lookForward = input('How far forward should MCTS search? Larger numbers = more difficult and longer computation time. Easy: 100, Medium: 250\n>> ');
+            obj.lookForward = lookForward; %input('How far forward should MCTS search? Larger numbers = more difficult and longer computation time. Easy: 100, Medium: 250\n>> ');
             obj.message = [];
         end
 
-        function [column, obj] = move(obj, boardState)
+        function [column, obj] = move(obj, boardState, ~)
+            disp(obj.lookForward)
             % This function is called by the game engine to get the next
             % move.
             %

@@ -1,6 +1,6 @@
 classdef StrategyType
-    %GameState Enum of game state values
-    %   Enum of game state values
+    %StrategyType Enum of strategy type values
+    %   Enum of strategy type values
     properties
         strategy
     end
@@ -11,7 +11,11 @@ classdef StrategyType
     end
     enumeration
         RANDOM (RandomStrategy)
-        MCTS (GreedyMctsStrategy)
+        MCTS (GreedyMctsStrategy(100))
+        MCTS_EASY (GreedyMctsStrategy(25))
+        MCTS_MEDIUM (GreedyMctsStrategy(100))
+        MCTS_HARD (GreedyMctsStrategy(250))
+        AlphaBeta (CheatAlphaBetaStrategy)
     end
 end
 
