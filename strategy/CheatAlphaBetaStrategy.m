@@ -13,6 +13,8 @@ classdef CheatAlphaBetaStrategy < Strategy
         function obj = CheatAlphaBetaStrategy(~)
             obj.name = "Impossible - Alpha Beta Pruning";
             obj.fakeDelay = 2;
+            options = weboptions;
+            options.Timeout = 60;
         end
         
         function [column, obj] = move(obj, BoardClass)
