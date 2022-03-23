@@ -20,13 +20,13 @@ classdef GreedyMctsStrategy < Strategy
             obj.message = [];
         end
 
-        function [column, obj] = move(obj, boardState, ~)
+        function [column, obj] = move(obj, BoardClass)
             disp(obj.lookForward)
             % This function is called by the game engine to get the next
             % move.
             %
             % Input:
-            %   boardState: The current board state.
+            %   BoardClass.boardState: The current board state.
             %
             % Output:
             %   column: The column where the next move should be played.
@@ -34,7 +34,7 @@ classdef GreedyMctsStrategy < Strategy
             % You can use the MCTS class to find the best move.
             %
             % Example:
-            %   MctsStrategy.move(boardState);
+            %   MctsStrategy.move(BoardClass.boardState);
             %
             % See also: MCTS
 
@@ -50,9 +50,9 @@ classdef GreedyMctsStrategy < Strategy
             
             for ii = 1:7
                 winning_states = 0;
-                if boardState(1, ii) == 0 % check if top piece is empty, or tell algorithm it lost
+                if BoardClass.boardState(1, ii) == 0 % check if top piece is empty, or tell algorithm it lost
                     for jj = 1:obj.lookForward
-                        winning_states = winning_states + simulateRandomGame(ii, boardState);
+                        winning_states = winning_states + simulateRandomGame(ii, BoardClass.boardState);
                     end
                 end
                 wins_per_starting_move(ii) = winning_states;

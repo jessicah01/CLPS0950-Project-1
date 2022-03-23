@@ -7,7 +7,7 @@ function game()
     clear all;
     quit = false;
     while ~quit
-        clc
+        % clc
         fprintf('Connect 4 - MATLAB Edition\nCreated by Isaac Kim, Jessica Hong, and Jenny Wang\n');
         tutor = input('Would you like to go through the tutorial? y/n\n>> ', 's') == 'y';
        
@@ -44,7 +44,7 @@ function game()
             if againstComputer && GameBoard.player == 2
                 disp("The computer is thinking...")
                 pause(GameBoard.ai.strategy.fakeDelay)
-                GameBoard = GameBoard.updateGame(GameBoard.ai.strategy.move(GameBoard.boardState, GameBoard));
+                GameBoard = GameBoard.updateGame(GameBoard.ai.strategy.move(GameBoard));
             else
                 GameBoard = GameBoard.updateGame(input('What column do you want to drop a piece into? 1-7\n>> '));
             end  

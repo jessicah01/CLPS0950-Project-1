@@ -29,6 +29,7 @@ classdef Board
             obj.boardState = zeros(6, 7);
             obj.turn = 1;
             obj.gameState = GameState.CONTINUE;
+            obj.history = "";
         end
         
         function obj = updateGame(obj, column)
@@ -41,7 +42,7 @@ classdef Board
             end
             %% FOR DEBUGGING PURPOSES
             % If you enter 8, make player 1 win, if you enter 9, make
-            % player 2 win, and if you enter 10, make player 3 win. After
+            % player 2 win, and if you enter 10, make a draw. After
             % everything is implemented, delete the section labeled as the
             % debugging block and it'll just reject output higher than 7
             if column > 7
@@ -66,6 +67,7 @@ classdef Board
                 obj.message = 'Invalid input - that column is full. Please choose another column.';
             else
                 obj.boardState(firstEmptySlot, column) = obj.player;
+                obj.history = obj.history + column;
                 obj.turn = obj.turn + 1;
                 if obj.player == 1
                     obj.player = 2;

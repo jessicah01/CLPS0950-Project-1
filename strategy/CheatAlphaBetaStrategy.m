@@ -1,4 +1,8 @@
 classdef CheatAlphaBetaStrategy < Strategy
+    % Computer literally cheating - solved via alpha beta pruning.
+    % Hits GameSolver API - we did not code this ourselves!
+    % Therefore, requires internet connection + GameSolver site to be
+    % online
     properties
         name
         fakeDelay
@@ -11,9 +15,10 @@ classdef CheatAlphaBetaStrategy < Strategy
             obj.fakeDelay = 2;
         end
         
-        function [column, obj] = move(obj, boardState, BoardClass)
-            %[~, column] = max(webread("https://connect4.gamesolver.org/solve?pos=343434").score.');
-            webread(["http://kevinalbs.com/connect4/back-end/index.php/getMoves?board_data=" reshape(boardState.', 1, []) "&player="])
+        function [column, obj] = move(obj, BoardClass)
+            scores = webread(['https://connect4.gamesolver.org/solve?pos=' char(BoardClass.history)]).score.';
+            scores(scores == 100) = -100;
+            [~, column] = max(scores);
         end
         
     end
