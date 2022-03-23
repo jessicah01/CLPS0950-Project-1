@@ -60,7 +60,7 @@ classdef GameTutorial
                     " has a Connect 4, then the game is a Draw!");
                 fprintf('\n')
                 pause(3)
-                choice = input("In this scenario, which colour should Yellow play to win? \n>>");
+                choice = input("In this scenario, which colomn should Yellow play to win? \n>>");
                 if choice == 4
                     disp("That's correct! This would be a classic example of a horizontal win.")
                 elseif choice < 1 || choice > 7
@@ -69,7 +69,7 @@ classdef GameTutorial
                     disp("Whoops! To win, Yellow should play column 4, that way there will be a Yellow horizontal win!")
                 end
                 pause(3)
-                choice = input("In this scenario, which colour should Red play to win? \n>>");
+                choice = input("In this scenario, which colomn should Red play to win? \n>>");
                 if choice == 1
                     disp("That's correct! This would be a classic example of a vertical win.")
                 elseif choice < 1 || choice > 7
@@ -78,7 +78,7 @@ classdef GameTutorial
                     disp("Whoops! To win, Red should play column 1, that way there will be a red vertical win!")
                 end
                 pause(3)
-                choice = input("In this scenario, which colour should Yellow play to win? \n>>");
+                choice = input("In this scenario, which colomn should Yellow play to win? \n>>");
                 if choice == 6
                     disp("That's correct! This would be a classic example of a diagonal win.")
                 elseif choice < 1 || choice > 7
@@ -100,7 +100,7 @@ classdef GameTutorial
                 fprintf('\n')
                 pause(3)
                 disp("If you don't choose the default will be Red first!");
-                fprintf('\n')
+                fprintf('\n'）
                 pause(3)
                 disp("Now that you have the basics down...");
                 fprintf('\n')
