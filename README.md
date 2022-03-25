@@ -6,10 +6,12 @@ Connect 4: MATLAB Edition is a collaborative project for Brown University course
 
 ## Playing the Game
 
-Download the connect4.mlappinstall file and execute it on your system. Connect4 will then be accessible via the "Apps" tab of Matlab. *Please ensure you do not attempt to run this app version while inside of the code directory!*
+Download the `connect4.mlappinstall` file (found in the Releases tab of Github or in `./build/connect4.mlappinstall`) and execute it on your system. Connect4 will then be accessible via the "Apps" tab of Matlab. *Please ensure you do not attempt to run this app while inside of the code directory!*
 
-This project's main version is written in Matlab App Designer, and alternatively can be run by opening the `homescreen.mlapp` file and clicking "Run" on top.  
-As a backup, a text-based version of the game can be played by executing the code in `game.m`.
+### Alternative methods of playing the game
+
+In the case the MATLAB app method fails, you can open the `homescreen.mlapp` file and click "Run" on top.  
+As a third backup, a text-based version of the game can be played by executing the code in `game.m`.
 
 ## Work breakdown
 - Base game logic (excluding win condition validation): Isaac (~5h)
