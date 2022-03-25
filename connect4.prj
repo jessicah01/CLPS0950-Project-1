@@ -1,7 +1,7 @@
 <deployment-project plugin="plugin.apptool" plugin-version="1.0">
-  <configuration file="C:\Users\snake\Documents\MATLAB\CLPS 0950\github\CLPS0950-Project-1\connect4.prj" location="C:\Users\snake\Documents\MATLAB\CLPS 0950\github\CLPS0950-Project-1" name="connect4" target="target.mlapps" target-name="Package App">
+  <configuration build-checksum="1778973666" file="C:\Users\snake\Documents\MATLAB\CLPS 0950\github\CLPS0950-Project-1\connect4.prj" location="C:\Users\snake\Documents\MATLAB\CLPS 0950\github\CLPS0950-Project-1" name="connect4" target="target.mlapps" target-name="Package App">
     <param.appname>connect4</param.appname>
-    <param.authnamewatermark>Isaac Kim</param.authnamewatermark>
+    <param.authnamewatermark>Isaac Kim, Jessica Hong, Jenny Wang</param.authnamewatermark>
     <param.email>isaac_y_kim@brown.edu</param.email>
     <param.company>Brown University</param.company>
     <param.icon />
@@ -9,7 +9,7 @@
     <param.summary>Connect 4, wrriten in MATLAB</param.summary>
     <param.description>Connect 4 - MATLAB Edition
 This project was written by Isaac Kim, Jessica Hong, and Jenny Wang at Brown University for the course CLPS 0950.</param.description>
-    <param.screenshot>C:\Users\snake\AppData\Local\Temp\tpb08ea874_e299_4cf5_a244_9512ec95cc54.png</param.screenshot>
+    <param.screenshot>C:\Users\snake\AppData\Local\Temp\tp395a5516_a3aa_477f_bbf5_acc9b3276107.png</param.screenshot>
     <param.version>1.0</param.version>
     <param.products.name>
       <item>MATLAB</item>
@@ -21,51 +21,69 @@ This project was written by Isaac Kim, Jessica Hong, and Jenny Wang at Brown Uni
       <item>9.10</item>
     </param.products.version>
     <param.platforms />
-    <param.output>${PROJECT_ROOT}</param.output>
+    <param.output>${PROJECT_ROOT}\build</param.output>
     <param.guid>1b7e70bf-2428-46cd-89f3-8b710cf512e2</param.guid>
     <unset>
-      <param.authnamewatermark />
+      <param.company />
       <param.icon />
       <param.icons />
       <param.version />
       <param.platforms />
-      <param.output />
     </unset>
     <fileset.main>
       <file>${PROJECT_ROOT}\homescreen.mlapp</file>
     </fileset.main>
     <fileset.depfun>
+      <file>C:\Users\snake\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\strategy\CheatAlphaBetaStrategy.m</file>
+      <file>C:\Users\snake\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\strategy\GreedyMctsStrategy.m</file>
+      <file>C:\Users\snake\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\strategy\RandomStrategy.m</file>
+      <file>C:\Users\snake\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\strategy\simulateRandomGame.m</file>
+      <file>C:\Users\snake\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\strategy\Strategy.m</file>
+      <file>C:\Users\snake\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\strategy\StrategyType.m</file>
+      <file>C:\Users\snake\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\Documents\MATLAB\CLPS 0950\github\CLPS0950-Project-1\tutorial\GameTutorial.m</file>
+      <file>C:\Users\snake\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\Documents\MATLAB\CLPS 0950\github\CLPS0950-Project-1\tutorial\scenario 1 answer.png</file>
+      <file>C:\Users\snake\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\Documents\MATLAB\CLPS 0950\github\CLPS0950-Project-1\tutorial\scenario 1 horizontal question.png</file>
+      <file>C:\Users\snake\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\Documents\MATLAB\CLPS 0950\github\CLPS0950-Project-1\tutorial\scenario 2 answer.png</file>
+      <file>C:\Users\snake\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\Documents\MATLAB\CLPS 0950\github\CLPS0950-Project-1\tutorial\scenario 2 vertical question.png</file>
+      <file>C:\Users\snake\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\Documents\MATLAB\CLPS 0950\github\CLPS0950-Project-1\tutorial\scenario 3 answer.png</file>
+      <file>C:\Users\snake\AppData\Roaming\MathWorks\MATLAB Add-Ons\Apps\connect4\Documents\MATLAB\CLPS 0950\github\CLPS0950-Project-1\tutorial\scenario 3 diagonal question.png</file>
+    </fileset.depfun>
+    <fileset.resources>
       <file>${PROJECT_ROOT}\Board.m</file>
       <file>${PROJECT_ROOT}\checkBoardState.m</file>
       <file>${PROJECT_ROOT}\chooseorder.mlapp</file>
+      <file>${PROJECT_ROOT}\connect4.prj</file>
+      <file>${PROJECT_ROOT}\dialog.mlapp</file>
       <file>${PROJECT_ROOT}\enddraw.mlapp</file>
       <file>${PROJECT_ROOT}\findFirstEmptySlot.m</file>
+      <file>${PROJECT_ROOT}\game.m</file>
       <file>${PROJECT_ROOT}\gamescreen.mlapp</file>
       <file>${PROJECT_ROOT}\GameState.m</file>
+      <file>${PROJECT_ROOT}\gameui.m</file>
+      <file>${PROJECT_ROOT}\homescreen.mlapp</file>
       <file>${PROJECT_ROOT}\IMG_0543.PNG</file>
       <file>${PROJECT_ROOT}\IMG_0549.PNG</file>
+      <file>${PROJECT_ROOT}\IMG_0553.PNG</file>
+      <file>${PROJECT_ROOT}\IMG_0554.PNG</file>
       <file>${PROJECT_ROOT}\IMG_0555.PNG</file>
       <file>${PROJECT_ROOT}\modescreen.mlapp</file>
       <file>${PROJECT_ROOT}\p1wins.mlapp</file>
       <file>${PROJECT_ROOT}\p2wins.mlapp</file>
+      <file>${PROJECT_ROOT}\README.md</file>
       <file>${PROJECT_ROOT}\rules.mlapp</file>
-      <file>${PROJECT_ROOT}\strategy\CheatAlphaBetaStrategy.m</file>
-      <file>${PROJECT_ROOT}\strategy\GreedyMctsStrategy.m</file>
-      <file>${PROJECT_ROOT}\strategy\RandomStrategy.m</file>
-      <file>${PROJECT_ROOT}\strategy\simulateRandomGame.m</file>
-      <file>${PROJECT_ROOT}\strategy\Strategy.m</file>
-      <file>${PROJECT_ROOT}\strategy\StrategyType.m</file>
+      <file>${PROJECT_ROOT}\strategy</file>
+      <file>${PROJECT_ROOT}\tutorial</file>
       <file>${PROJECT_ROOT}\tutorial1.mlapp</file>
       <file>${PROJECT_ROOT}\tutorial1ans.mlapp</file>
       <file>${PROJECT_ROOT}\tutorial2.mlapp</file>
       <file>${PROJECT_ROOT}\tutorial2ans.mlapp</file>
       <file>${PROJECT_ROOT}\tutorial3.mlapp</file>
       <file>${PROJECT_ROOT}\tutorial3ans.mlapp</file>
-    </fileset.depfun>
-    <fileset.resources />
+      <file>${PROJECT_ROOT}\ui</file>
+    </fileset.resources>
     <fileset.package />
     <build-deliverables>
-      <file location="C:\Users\snake\Documents\MATLAB\CLPS 0950\github" name="CLPS0950-Project-1" optional="false">C:\Users\snake\Documents\MATLAB\CLPS 0950\github\CLPS0950-Project-1</file>
+      <file location="${PROJECT_ROOT}" name="build" optional="false">C:\Users\snake\Documents\MATLAB\CLPS 0950\github\CLPS0950-Project-1\build</file>
     </build-deliverables>
     <workflow />
     <matlab>

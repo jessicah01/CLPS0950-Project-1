@@ -6,7 +6,9 @@ Connect 4: MATLAB Edition is a collaborative project for Brown University course
 
 ## Playing the Game
 
-This project's main version is written in Matlab App Designer, and can be run by opening the `homescreen.mlapp` file and clicking "Run" on top.  
+Download the connect4.mlappinstall file and execute it on your system. Connect4 will then be accessible via the "Apps" tab of Matlab. *Please ensure you do not attempt to run this app version while inside of the code directory!*
+
+This project's main version is written in Matlab App Designer, and alternatively can be run by opening the `homescreen.mlapp` file and clicking "Run" on top.  
 As a backup, a text-based version of the game can be played by executing the code in `game.m`.
 
 ## Work breakdown

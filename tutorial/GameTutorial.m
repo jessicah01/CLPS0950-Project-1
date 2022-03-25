@@ -100,7 +100,7 @@ classdef GameTutorial
                 fprintf('\n')
                 pause(3)
                 disp("If you don't choose the default will be Red first!");
-                fprintf('\n'）
+                fprintf('\n')
                 pause(3)
                 disp("Now that you have the basics down...");
                 fprintf('\n')
